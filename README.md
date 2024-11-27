@@ -26,8 +26,14 @@ Este é um sistema simples de login que se conecta a um banco de dados MySQL par
 - **Correção do Driver JDBC**: Atualizei o nome do driver JDBC para o mais recente, garantindo maior compatibilidade com o banco de dados.
 - **Organização do Código**: Separei a lógica de conexão em um método próprio, deixando o código mais modular e fácil de entender.
 
-## Como Testar as Correções
+# ETAPA 3 - Análise de Fluxo  
 
-1. Clone o repositório e acesse a branch onde as correções foram feitas:
-   ```bash
-   git checkout main
+## Grafo de Fluxo  
+![Grafo de Fluxo](link_da_imagem)
+
+## Descrição dos Caminhos  
+- *Caminho 1*: Início → Conectar ao BD → Carregar Driver → Estabelecer Conexão → Construir SQL → Executar SQL → rs.next() → Sim → result = true → return result  
+- *Caminho 2*: Início → Conectar ao BD → Carregar Driver → Estabelecer Conexão → Construir SQL → Executar SQL → rs.next() → Não → return result  
+
+## Complexidade Ciclomática  
+A complexidade ciclomática do código é *1*.
