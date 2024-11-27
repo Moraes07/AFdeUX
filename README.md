@@ -28,12 +28,47 @@ Este é um sistema simples de login que se conecta a um banco de dados MySQL par
 
 # ETAPA 3 - Análise de Fluxo  
 
-## Grafo de Fluxo  
-![Grafo de Fluxo](link_da_imagem)
+# ETAPA 3 - Análise de Fluxo  
 
-## Descrição dos Caminhos  
-- *Caminho 1*: Início → Conectar ao BD → Carregar Driver → Estabelecer Conexão → Construir SQL → Executar SQL → rs.next() → Sim → result = true → return result  
-- *Caminho 2*: Início → Conectar ao BD → Carregar Driver → Estabelecer Conexão → Construir SQL → Executar SQL → rs.next() → Não → return result  
+## Grafo de Fluxo do Método verificarUsuario  
 
-## Complexidade Ciclomática  
-A complexidade ciclomática do código é *1*.
+O grafo de fluxo do método verificarUsuario apresenta os seguintes pontos numerados:  
+
+1. Método conectarBD inicia.  
+2. Inicializa Connection conn como null.  
+3. Tenta carregar o driver JDBC.  
+4. Define a URL de conexão.  
+5. Conecta ao banco de dados e inicializa conn.  
+6. Captura exceção se falhar ao conectar.  
+7. Retorna conn.  
+8. Método verificarUsuario inicia.  
+9. Inicializa sql como string vazia.  
+10. Chama conectarBD().  
+11. Adiciona a instrução SQL para selecionar nome.  
+12. Adiciona a cláusula WHERE para o login.  
+13. Adiciona a condição da senha.  
+14. Tenta executar a instrução SQL.  
+15. Cria o Statement.  
+16. Executa a consulta SQL.  
+17. Verifica se o ResultSet possui dados.  
+18. Define result = true se um usuário for encontrado.  
+19. Recupera o nome do ResultSet.  
+20. Captura exceções ao executar a consulta.  
+21. Retorna result.
+
+### Complexidade Ciclomática  
+
+A complexidade ciclomática do método verificarUsuario é *4*, indicando 4 caminhos independentes no fluxo.  
+
+### Sequências de Caminhos  
+
+As sequências dos caminhos identificados são:  
+
+1. *Caminho 1*: Conexão bem-sucedida e usuário encontrado.  
+2. *Caminho 2*: Conexão bem-sucedida e usuário não encontrado.  
+3. *Caminho 3*: Falha na conexão ao banco de dados.  
+4. *Caminho 4*: Exceção ao executar a consulta SQL.  
+
+---  
+
+Sinta-se à vontade para ajustar qualquer parte do texto conforme necessário! Se houver mais algo com que eu possa ajudar, não hesite em me avisar.
