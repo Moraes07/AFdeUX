@@ -151,13 +151,3 @@ O projeto consiste em:
          <version>8.0.31</version>  
      </dependency>  
        
-
-## Como Usar  
-
-1. *Executar o Sistema*:  
-   - Execute a classe principal do projeto para iniciar o sistema.  
-   - Use o método de registro para criar novos usuários.  
-   - Utilize o método de autenticação para realizar login com as credenciais cadastradas.  
-
-2. *Testes*:  
-   - O sistema pode ser testado utilizando entradas de usuários existentes e novas, assegurando que a autenticação funcione corretamente.
